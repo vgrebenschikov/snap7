@@ -1,0 +1,3 @@
+lib/libsnap7.so
+include/snap7.h
+share/examples/snap7/c-cpp/snap7.cpp
