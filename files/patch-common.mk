@@ -1,6 +1,6 @@
---- common.mk.orig	2014-04-16 12:16:20.000000000 +0400
-+++ common.mk	2015-11-14 20:48:15.600209591 +0300
-@@ -22,7 +22,9 @@
+--- common.mk.orig	2014-04-16 08:16:20 UTC
++++ common.mk
+@@ -22,7 +22,9 @@ LinkOptions            :=  -O3
  IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)../../src/sys $(IncludeSwitch)../../src/core $(IncludeSwitch)../../src/lib 
  Libs                   := $(LibrarySwitch)pthread $(LibrarySwitch)rt 
  LibPath                := $(LibraryPathSwitch). 
@@ -11,7 +11,7 @@
  
  ##
  ## Common variables (CXXFLAGS varies across platforms)
-@@ -108,4 +110,6 @@
+@@ -108,4 +110,6 @@ clean:
  
  install: all
  	cp -f $(OutputFile) $(LibInstall)
