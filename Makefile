@@ -18,16 +18,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
 WRKSRC_SUBDIR=	build/unix
 
 USES=		gmake
-MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${LD} SharedObjectLinkerName="${LD} -shared -fPIC"
+MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${CXX} SharedObjectLinkerName="${CXX} -shared -fPIC"
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 armv6 i386
 
-.include <bsd.port.pre.mk>
+SNAP_ARCH=	${ARCH:S/amd64/x86_64/:S/armv6/arm_v6/}
+MAKEFILE=	${SNAP_ARCH}_bsd.mk
 
-.if ${ARCH} == "amd64"
-MAKEFILE=	x86_64_bsd.mk
-.else
-MAKEFILE=	i386_bsd.mk
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
