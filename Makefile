@@ -20,7 +20,7 @@ WRKSRC_SUBDIR=	build/unix
 USES=		gmake
 MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${CXX} SharedObjectLinkerName="${CXX} -shared -fPIC"
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=	amd64 armv6 i386 mips
 
 SNAP_ARCH=	${ARCH:S/amd64/x86_64/:S/armv6/arm_v6/}
 MAKEFILE=	${SNAP_ARCH}_bsd.mk
