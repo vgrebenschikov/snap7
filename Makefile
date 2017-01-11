@@ -22,7 +22,13 @@ MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${CXX} SharedObjectLinkerName="${CXX} 
 
 ONLY_FOR_ARCHS=	amd64 armv6 i386 mips
 
+USE_LDCONFIG=	yes
+PLIST_FILES=	lib/libsnap7.so include/snap7.h share/examples/snap7/c-cpp/snap7.cpp
+
 SNAP_ARCH=	${ARCH:S/amd64/x86_64/:S/armv6/arm_v6/}
 MAKEFILE=	${SNAP_ARCH}_bsd.mk
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsnap7.so
 
 .include <bsd.port.mk>
