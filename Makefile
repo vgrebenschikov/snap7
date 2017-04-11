@@ -4,8 +4,7 @@
 PORTNAME=	snap7
 PORTVERSION=	1.4.2
 CATEGORIES=	comms
-MASTER_SITES=	http://sourceforge.net/projects/snap7/files/1.4.2/snap7-full-1.4.2.7z/download?/ \
-		LOCAL/db
+MASTER_SITES=	SF/snap7/${PORTVERSION}
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 EXTRACT_SUFX=	.7z
 
